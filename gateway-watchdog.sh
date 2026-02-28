@@ -9,7 +9,7 @@
 
 # 配置
 CHECK_INTERVAL=60                                    # 检查间隔（秒）
-HEALTH_URL="http://127.0.0.1:18789/healthz"         # 健康检查 URL
+HEALTH_URL="${OPENCLAW_HEALTH_URL:-http://127.0.0.1:18789/healthz}"         # 健康检查 URL
 LOCK_FILE="/tmp/openclaw-restart.lock"              # 重启锁文件
 LOG_FILE="$HOME/.openclaw/logs/watchdog.log"        # 日志文件
 MAX_LOG_SIZE=1048576                                # 日志最大 1MB
@@ -17,9 +17,9 @@ MAX_RETRY=3                                         # 最大重试次数
 RETRY_DELAY=10                                      # 重试间隔（秒）
 
 # 通知配置
-NOTIFY_CHANNEL="telegram"
+NOTIFY_CHANNEL="${OPENCLAW_NOTIFY_CHANNEL:-telegram}"
 NOTIFY_TARGET="${OPENCLAW_NOTIFY_TARGET:-YOUR_TELEGRAM_ID}"
-OPENCLAW_BIN="/opt/homebrew/bin/openclaw"
+OPENCLAW_BIN="${OPENCLAW_BIN:-/opt/homebrew/bin/openclaw}"
 
 # 确保日志目录存在
 mkdir -p "$(dirname "$LOG_FILE")"

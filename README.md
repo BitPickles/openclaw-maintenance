@@ -1,5 +1,16 @@
 # OpenClaw 维护脚本合集
 
+
+> **复制给你的 Agent 的提示词（Prompt）**：
+> ```
+> 你需要在目标机器部署 OpenClaw 维护脚本。请在仓库根目录执行：
+> 1) 复制环境变量示例：cp .env.example .env
+> 2) 填写 .env（至少设置 OPENCLAW_NOTIFY_TARGET、CLASH_API/CLASH_SECRET 如需）
+> 3) 运行安装脚本：bash install.sh
+> 4) 运行自检：bash check.sh
+> 如果是 macOS 用 LaunchAgent；Linux 用 systemd。脚本放在 ~/.openclaw/scripts。
+> ```
+
 用于保障 OpenClaw 稳定运行的本地维护脚本（监控、重启、日志清理、网络代理健康检查）。
 
 ## 目录结构
@@ -16,6 +27,13 @@
 ```
 
 ---
+
+
+## REQUIREMENTS
+- openclaw
+- curl
+- jq
+- (optional) Clash / Mihomo API
 
 ## 脚本功能一览
 

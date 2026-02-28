@@ -16,20 +16,20 @@ MAX_LOG_SIZE=5242880
 DEBUG=false
 
 # Clash API 配置
-CLASH_API="http://127.0.0.1:9097"
-CLASH_SECRET="set-your-secret"
-DELAY_TEST_URL="https://api.telegram.org"
+CLASH_API="${CLASH_API:-http://127.0.0.1:9097}"
+CLASH_SECRET="${CLASH_SECRET:-set-your-secret}"
+DELAY_TEST_URL="${DELAY_TEST_URL:-https://api.telegram.org}"
 DELAY_TIMEOUT=5000
 DELAY_THRESHOLD=3000
 
-# 节点优先级
-REGIONS=("TWN" "JPN" "HKG")
+# 节点优先级（逗号分隔）
+IFS=',' read -r -a REGIONS <<< "${PROXY_REGIONS:-TWN,JPN,HKG}"
 
 # 通知配置
 OPENCLAW_BIN="/opt/homebrew/bin/openclaw"
-NOTIFY_CHANNEL="telegram"
+NOTIFY_CHANNEL="${OPENCLAW_NOTIFY_CHANNEL:-telegram}"
 NOTIFY_TARGET="${OPENCLAW_NOTIFY_TARGET:-YOUR_TELEGRAM_ID}"
-NOTIFY_ACCOUNT="engineer"
+NOTIFY_ACCOUNT="${OPENCLAW_NOTIFY_ACCOUNT:-engineer}"
 
 # 通知冷却时间（秒）
 NOTIFY_COOLDOWN=300
