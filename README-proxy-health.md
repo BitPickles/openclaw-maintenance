@@ -131,6 +131,11 @@ tail -f ~/.openclaw/logs/proxy-health.log
 
 ## 通知
 
+> 通过环境变量设置通知目标：
+> ```bash
+> export OPENCLAW_NOTIFY_TARGET=123456789
+> ```
+
 切换节点或检测到 OpenClaw 问题时，通过 Telegram 通知 Boss：
 
 ```bash

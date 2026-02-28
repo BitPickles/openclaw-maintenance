@@ -169,6 +169,12 @@ sudo systemctl enable --now openclaw-watchdog
 
 # 注意事项
 
+
+> **通知目标配置**：将环境变量 `OPENCLAW_NOTIFY_TARGET` 设置为你的 Telegram 用户 ID，例如：
+> ```bash
+> export OPENCLAW_NOTIFY_TARGET=123456789
+> ```
+
 - `proxy-health.sh` 不依赖 Gateway，可独立部署
 - `gateway-watchdog.sh` 依赖 `openclaw` CLI
 - Clash API 密钥需要在脚本中配置
